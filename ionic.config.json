@@ -1,0 +1,10 @@
+{
+ "name": "dial-a-bottle",
+  "app_id": "",
+  "type": "ionic1",
+  "watchPatterns": [],
+  "integrations": {
+    "cordova": {}
+  }
+}
+

@@ -1,0 +1,20 @@
+<ion-content class="content-padding" scroll="false" ng-controller="LoginController as loginController">
+    <form novalidate name="loginForm" ng-submit="loginController.login(loginController.username, loginController.password)">
+        <div class="list list-inset form-list">
+            <label class="item item-input">
+                <i class="icon ion-android-person input-icon-left"></i>
+                <input type='text' placeholder="{{'auth.username' | translate}}" ng-model="loginController.username" required>
+            </label>
+            <label class="item item-input">
+                <i class="app-icon icon-password input-icon-left"></i>
+                <input type="password" placeholder="{{'auth.password' | translate}}" ng-model="loginController.password" required>
+            </label>
+        </div>
+        <button ng-disabled="loginForm.$invalid || loginController.inAuth" type="submit" class="button button-block button-dark login-button" button-spinner="{{loginController.inAuth}}" button-spinner-delay="500">
+            {{'auth.signIn' | translate}}
+        </button>
+    </form>
+    <div class="bar bar-footer">
+        <h1 class="title"><a class="button button-clear button-positive button-small button-in-bar-title" ng-click="loginController.goToRegister()">{{'auth.register' | translate}}</a></h1>
+    </div>
+</ion-content>

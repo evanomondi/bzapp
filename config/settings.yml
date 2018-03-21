@@ -1,0 +1,164 @@
+#
+#  This is the main configuration file of this MobileFront powered application
+#
+
+app_name: Dial a Bottle
+
+# The name of the plugin to use to connect to ecommerce backend
+plugin: woocommerce
+
+# UI theme of the app. Supported themes can be found in app/styles/themes folder
+theme:              evening
+# Make home page header transparent
+
+home_header_transparent: true
+
+# home_blocks section describes up to three blocks displayed on the home page.
+# A block can be used to promote a certain category of products on the home page.
+
+home_blocks:
+
+   # Title of the block
+ - title:             Great Drinks Made For Great People
+   # Subtitle displyed right below the title
+   subtitle:          Free Delivery. We Delivery You Party
+   # Text of the action button displayed below subtitle
+   action:            See more
+   # Displays a semi-transparent strip behind title, subtitle and action button
+   # Can improve text visibility
+   highlightContent:  true
+   # Id of the category in your ecommerce platform which this block links to
+   storeCategoryId:   152
+   # Path to the backgorund image for this block. If set to null the app will attempt to load the image form your ecommerce platform
+   image:             images/homepage/block1_image.jpg
+   # Horizontal alignment of the block content. Possible values: left, right and center
+   halign:            left
+   # Vertical alignment of the block content. Possible values: top, bottom and middle
+   valign:            bottom
+
+   # Next block
+ - title:             We Deliver The Finest Drinks
+   subtitle:          Great Drinks For Everyone
+   action:            Discover
+   highlightContent:  true
+   storeCategoryId:   153
+   image:             images/homepage/block2_image.jpg
+   halign:            right
+   valign:            bottom
+
+   #Another block could be here
+
+# phone, email and address are specified on the about us page
+phone:              +254-720307201
+email:              sevanomondi7@gmail.com
+website:            hevantech.getforge.io
+address:            Bogani Road Karen
+# Language to be used in the app. If empty the app attempts to automatically find out user's language setting
+
+preferred_language:
+
+# The language used when the app fails to load preferred_language
+# Should be one of the locales present in resources/languages folder
+
+fallback_language: en_US
+
+# Whether the vendor name should be displayed for the items in the product list
+display_vendor:     true
+
+display_logo_in_side_menu: false
+
+# Side menu title is displayed on the top of side menu
+side_menu_title:  Dial a Bottle
+
+# Whether side menu background should be blurry
+blurry_side_menu_background: true
+
+# Side menu item configuration
+
+side_menu_items:
+
+    - title: menu.myCart
+      type:  page
+      ref:   app.shopping_cart
+      badgeCountProvider: cart
+      icon: icon-cart
+
+    - title: menu.orderHistory
+      type:  secure-page
+      ref:   app.order-history
+      icon:  icon-orders
+      capability: orderHistory
+
+    - title: menu.wishlist
+      type:  page
+      ref:   app.wishlist({viewType:'wishlist'})
+      badgeCountProvider: wishlist
+      icon: icon-wishlist
+
+    - title: menu.about
+      type:  page
+      ref:   app.about
+      icon:  icon-about
+
+    - type:  auth
+      capability: authentication
+
+    # - title: New arrivals
+    #   type:  category
+    #   ref:   0000000
+    #   icon:  icon-new
+
+    # - title: Call us
+    #   type: action
+    #   ref:  tel://123456789
+    #   icon:  icon-phone
+
+    # - title: External page
+    #   type: external
+    #   ref:  https://example.com
+    #   icon:  icon-globe
+
+# Calculate amount of items in shopping cart based on distinct item quantity
+# Or based on total items quantity. Possible values: distinct_item_count, total_item_count
+cart_badge: distinct_item_count
+
+# Push notifications
+
+# Whether the push notifications enabled
+push_enabled: false
+
+# Ionic App Id to which MobileFront app will be linked
+ionic_app_id:
+
+# OneSignal App Id
+
+onesignal_app_id:
+
+# Sender ID generated on Google Firebase side for Android
+android_sender_id:
+
+# Payments
+
+# Stripe
+
+# Stripe publishable key
+stripe_key:
+
+# Analytics
+# Listing analytics trackers below
+
+trackers:
+
+   # Google Analytics
+   
+   #ga:
+   #   tracking_id: UA-XXXXXXXXX-X
+
+   # Facebook analytics 
+     
+   #facebook: {}
+
+
+
+
+

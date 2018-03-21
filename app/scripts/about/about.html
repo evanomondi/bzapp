@@ -1,0 +1,64 @@
+<ion-view view-title="{{'about.title' | translate}}">
+    <ion-nav-buttons side="left">
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon app-icon icon-search" search-button>
+        </button>
+        <button class="button button-icon app-icon icon-cart" ui-sref="app.shopping_cart" cart-button>
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="about-section logo-section">
+            <div class="logo"></div>
+        </div>
+        <div class="about-section">
+            <div class="section-title">{{::'about.aboutUs' | translate}}</div>
+            <div class="about-section-value" translate="about.aboutText"></div>
+        </div>
+        <div class="about-section">
+            <div class="section-title">{{::'about.contacts' | translate}}</div>
+            <a ng-if="about.phone" href="tel:{{about.phone}}" class="contact-item flex-horizontal">
+                <span class="icon app-icon icon-phone"></span>
+                <div class="content">
+                    <div class="contact-item-label">{{::'about.phone' | translate}}</div>
+                    <div class="contact-item-value link">{{about.phone}}</div>
+                </div>
+            </a>
+            <a ng-if="about.email" href="mailto:{{about.email}}" class="contact-item flex-horizontal">
+                <span class="icon app-icon icon-mail"></span>
+                <div class="content">
+                    <div class="contact-item-label">{{::'about.email' | translate}}</div>
+                    <div class="contact-item-value link">{{about.email}}</div>
+                </div>
+            </a>
+            <a ng-if="about.website" href="#" class="contact-item flex-horizontal" ng-click="about.navigateToSite($event, about.website)">
+                <span class="icon app-icon icon-globe"></span>
+                <div class="content">
+                    <div class="contact-item-label">{{::'about.website' | translate}}</div>
+                    <div class="contact-item-value link">{{about.website}}</div>
+                </div>
+            </a>
+            <a ng-if="about.address" class="contact-item flex-horizontal" ng-click="about.navigateToMaps(about.address)">
+                <span class="icon app-icon icon-house"></span>
+                <div class="content">
+                    <div class="contact-item-label">{{::'about.address' | translate}}</div>
+                    <div class="contact-item-value">{{about.address}}</div>
+                </div>
+            </a>
+            <div class="about__map" ng-if="about.address" map-lazy-load="https://maps.google.com/maps/api/js" data-tap-disabled="true">
+                <ng-map center="{{about.address}}"
+                    zoom-control="false"
+                    map-type-control="false"
+                    overview-map-control="false" 
+                    pan-control="false"
+                    rotate-control="false" 
+                    scale-control="false" 
+                    street-view-control="false"
+                 zoom="16">
+                     <marker position="{{about.address}}" centered="true"></marker>
+                 </ng-map>
+            </div>
+        </div>
+        
+    </ion-content>
+</ion-view>

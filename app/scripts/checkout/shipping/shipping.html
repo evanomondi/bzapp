@@ -1,0 +1,42 @@
+<ion-view side-menu-active="false" view-title="{{ :: 'checkout.shipping.title' | translate}}">
+    <ion-nav-buttons side="left">
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+    </ion-nav-buttons>
+    <ion-content overflow-scroll="true" class="has-footer shipping content-padding">
+        <div class="content-wrapper" ng-if="shipping.viewData.showContent">
+            <div app-capability="authentication" auth-block></div>
+            <form novalidate name="shipping.form">
+                <!-- Shipping address form below -->
+                <div class="section-title">
+                    {{ :: 'checkout.shipping.shippingSectionTitle' | translate }}
+                </div>
+                <div class="address-form" address="shipping.viewData.checkoutSession.shippingAddress" countries="shipping.viewData.countries" address-changed="shipping.addressChanged()">
+                    <label class="item item-input">
+                        <input type="email" placeholder="{{ :: 'checkout.emailPlaceholder' | translate }}" ng-model="shipping.viewData.checkoutSession.shippingAddress.email" required>
+                    </label>
+                </div>
+                <!-- Shipping method selection below -->
+                <div class="shipping-methods" loader-pane="shipping.viewData.methodLoader" loader-pane-error-message="shipping.viewData.methodErrorMessage" loader-pane-empty-message="shipping.viewData.methodEmptyMessage" ng-if="shipping.viewData.hasEnoughInfoForShipping">
+                    <div class="section-title">
+                        {{ :: 'checkout.shipping.shippingMethodSectionTitle' | translate }} </div>
+                    <div class="list list-inset form-list">
+                        <div class="row method-option" ng-repeat="method in shipping.viewData.shippingMethods track by method.id" ng-class="{ 'selected' : shipping.viewData.checkoutSession.shippingMethod.id === method.id }">
+                            <div class="col-50" ng-click="shipping.selectShippingMethod(method)">
+                                <i class="icon method-check" ng-class="{ 'ion-ios-checkmark-outline' : shipping.viewData.checkoutSession.shippingMethod.id === method.id,  'ion-ios-circle-outline' : shipping.viewData.checkoutSession.shippingMethod.id !== method.id }"></i>
+                                <span>{{ :: method.title }}</span>
+                            </div>
+                            <div ng-if="method.cost > 0" class="col-50 method-price" ng-bind-html="method.cost | currencyFormatter : shipping.viewData.currency"></div>
+                            <div ng-if="method.cost == 0" class="col-50 method-price">{{ :: 'checkout.shipping.method.free' | translate }}</div>
+                        </div>
+                    </div>
+                    <input type="hidden" ng-model="shipping.viewData.checkoutSession.shippingMethod.id" required>
+                </div>
+            </form>
+        </div>
+    </ion-content>
+    <ion-footer-bar class="bar bar-footer bar-checkout">
+        <checkout-footer amount="shipping.viewData.total" currency="shipping.viewData.currency" message="'checkout.includingTaxes' | translate"></checkout-footer>
+        <button class="button button-clear icon-right ion-ios-arrow-forward pull-right" ng-disabled="!shipping.form.$valid" ng-click="shipping.navigateToBilling()">{{::'checkout.shipping.continueToPayment' | translate}} &nbsp;</button>
+    </ion-footer-bar>
+</ion-view>

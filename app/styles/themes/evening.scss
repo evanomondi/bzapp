@@ -1,0 +1,79 @@
+//Theme colors. For more detailed configuration edit "_variables.scss"
+
+//main
+$main-color: #39464f;
+$alternative-color: #efefef;
+$details-color: #ed5a39;
+$background-color: #fff;
+$header-color: $main-color;
+$header-divider-color: $header-color;
+$form-input-border-color: #A0A0A0;
+$form-input-border-active-color: #ED5A39;
+$input-icon-color: #A0A0A0;
+$input-placeholder-color: #c7c7c7;
+$inline-link-color: #4981f8;
+$spinner-color: $main-color;
+$activated-button-background: lighten($header-color, 40%);
+
+$text-color-main: $main-color;
+$text-color-light: lighten($text-color-main, 17%);
+$text-color-attention: #FD7577;
+
+//home page
+$list-item-color: #00408a;
+$list-item-active-background: $alternative-color;
+
+//products
+$active-tab-text-color:#00408a;
+$passive-tab-text-color:#a9a9a9;
+$grid-border-color:#f5f5f5;
+$list-border-color:#f5f5f5;
+$sliding-tabs-background-color:$main-color;
+$badge-bg: $details-color;
+
+//side menu
+$side-menu-link-color:#FFFFFF;
+$side-menu-link-color-active:#FFF;
+$side-menu-background-color:$main-color;
+$side-menu-background-texture-1-part-color:#5d707b;
+$side-menu-background-texture-2-part-color:#57656e;
+$side-menu-background-texture-3-part-color:#425969;
+$side-menu-background-texture-4-part-color:#45505a;
+$side-menu-top-separator-color:#7e9aae;
+$side-menu-link-background-color-active:#2e3940;
+$side-menu-link-badge-background-color:#2e3940;
+$side-menu-link-badge-font-color:#ffa200;
+$side-menu-icon-opacity: 0.6;
+$avatar-background-color: #7e9aae;
+
+//wishlist
+$button-delete-bg: $details-color;
+$button-delete-text: #fff;
+
+//product details
+$fav-button-off: #7F7F7F;
+$fav-button-on: #F46265;
+$header-icons-color:$main-color;
+$slider-bullet-color:$alternative-color;
+$slider-bullet-active-color:$details-color;
+$add-to-cart-block-background-color: $main-color;
+$product-title-color:$main-color;
+$price-font-color: $details-color;
+$show-more-font-color:$details-color;
+$product-description-font-color:$text-color-main;
+$options-font-color:$text-color-main;
+$attributes-border-color:darken($grid-border-color, 5%);
+
+//cart
+$price-color:$details-color;
+$bar-checkout-bg: $details-color;
+
+// checkout
+$selected-shipping-option-color: #ED5A39;
+$checkout-sections-font-color: $main-color;
+
+//summary
+$variants-font-color: #a3a3a3;
+
+//thank you
+$tick-icon-color: #529c29;

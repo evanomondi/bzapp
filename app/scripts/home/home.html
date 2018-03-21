@@ -1,0 +1,18 @@
+<ion-view view-title="" side-menu-active='true' nav-bar-transparent="{{home.transparentHeader}}">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon app-icon icon-search" search-button></button>
+        <button class="button button-icon app-icon icon-cart" ui-sref="app.shopping_cart" cart-button></button>
+    </ion-nav-buttons>
+    <ion-content ng-class="{'no-header': home.transparentHeader}" lazy-scroll>
+        <div class="block-container">
+            <div ng-repeat="block in home.viewData.blocks track by $index" loader-pane="home.viewData.blockLoader" loader-pane-spinner-animation="lines" class="front-block" ng-click="home.navigateFromBlock(block)" block-options="block"></div>
+            <!--div loader-pane="home.viewData.blockBLoader" loader-pane-spinner-animation="lines" class="front-block" ng-if="home.viewData.blockB" ng-click="home.navigateToCategory(home.viewData.blockB.category)" block-options="home.viewData.blockB"></div>
+            <div loader-pane="home.viewData.blockCLoader" loader-pane-spinner-animation="lines" class="front-block" ng-if="home.viewData.blockC" ng-click="home.navigateToCategory(home.viewData.blockC.category)" block-options="home.viewData.blockC"></div-->
+        </div>
+        <div loader-pane="home.categoryRequest" loader-pane-empty-message="home.categoryEmptyMessage" loader-pane-show-spinner="home.showSpinner" loader-pane-spinner-animation="lines" class="list centered category-list">
+            <a ng-repeat="category in home.categories track by $index" class="item" ng-click="home.navigateToCategory(category)">
+            {{::category.title}}
+          </a>
+        </div>
+    </ion-content>
+</ion-view>

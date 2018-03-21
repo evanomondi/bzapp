@@ -1,0 +1,40 @@
+.shipping-methods {
+	min-height: 100px;
+	position: relative;
+}
+
+.billing-methods {
+	position: relative;
+}
+
+.method-option {
+
+	margin-bottom: 10px;
+	font-size: 16px;
+
+	& .method-check {
+		font-size: 1.1em;
+	}
+
+	& .method-price {
+		text-align: right;
+	}
+
+	&.selected {
+		color: $selected-shipping-option-color;
+	}
+}
+
+.method-option:last-child {
+	margin-bottom: 0;
+}
+
+.auth-block {
+	margin-bottom: 10px;
+	line-height: 28px;
+
+	.sign-in {
+		font-size: 14px;
+        color: $inline-link-color;
+	}
+}

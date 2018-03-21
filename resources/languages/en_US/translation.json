@@ -1,0 +1,160 @@
+{
+    "menu": {
+        "home": "Home",
+        "myCart": "My Cart",
+        "orderHistory": "Orders",
+        "wishlist": "Wishlist",
+        "about": "About",
+        "signIn": "Sign In",
+        "signOut": "Sign Out"
+    },
+    "products": {
+        "title": "Products",
+        "all": "All",
+        "noProducts": "This category has no products",
+        "sortFeatured": "Featured",
+        "sortAZ": "A-Z",
+        "sortZA": "Z-A",
+        "sortNewest": "Newest",
+        "sortPopularity": "Popularity",
+        "sortPriceAsc": "Price Ascending",
+        "sortPriceDesc": "Price Descending",
+        "sortRating": "Rating"
+    },
+    "productDetails": {
+        "addToCart": "Add To Cart",
+        "soldOut": "Sold Out"
+    },
+    "wishlist": {
+        "title": "Wishlist",
+        "noProducts": "No products have been added to wishlist"
+    },
+    "cart": {
+        "title": "Cart",
+        "noProducts": "The shopping cart is empty.",
+        "checkout": "Checkout"
+    },
+    "orderHistory": {
+        "title": "Orders",
+        "ordersEmptyMessage": "You don't have any orders.",
+        "ordersErrorMessage": "Orders could not be retrieved."
+    },
+    "orderDetails": {
+        "title": "Order",        
+        "ordersErrorMessage": "Order could not be retrieved.",
+        "totalProducts": "Total products",
+        "totalShipping": "Total shipping",
+        "taxes": "Taxes",
+        "fees": "Fees",
+        "discount": "Discount",
+        "total": "Total"
+    },
+    "checkout": {
+        "excludingTaxes": "excl. taxes",
+        "includingTaxes": "incl. taxes & fees",
+        "shipping": {
+            "title": "Shipping",
+            "continueToPayment": "Payment",
+            "method": {
+                "free": "Free",
+                "errorMessage": "Shipping methods could not be retrieved.",
+                "emptyMessage": "No shipping methods are available for this address."
+            },
+            "shippingSectionTitle": "Shipping address",
+            "shippingMethodSectionTitle": "Shipping method"
+        },
+        "billing": {
+            "title": "Billing",
+            "cardDetailsSectionTitle": "Card details",
+            "cardNumberPlaceholder": "Card number",
+            "nameOnCardPlacehdoler": "Name on card",
+            "expiryMonthPlaceholder": "MM",
+            "expiryYearPlaceholder": "YY",
+            "cvvPlaceholder": "CVV",
+            "billingAddressSectionTitle": "Billing address",
+            "useShippingAddressForBilling": "Use shipping address for billing",
+            "continueToSummary": "Summary",
+            "errorPopupTitle": "Billing error"
+        },
+        "modal": {
+            "countryTitle": "Select country",
+            "stateTitle": "Select state",
+            "close": "Close"
+        },
+        "summary": {
+            "title": "Summary",
+            "completeCheckout": "Complete checkout",
+            "paymentMethod": "Payment method",
+            "shippingMethod": "Shipping method",
+            "totalProducts": "Total products",
+            "totalShipping": "Total shipping",
+            "taxes": "Taxes",
+            "fees": "Fees",
+            "total": "Total",
+            "card": "Card"
+        },
+        "thankyou": {
+            "orderAccepted": "Thank you!",
+            "orderRejected": "We are sorry.",
+            "order": "Order",
+            "orderAcceptedMessage": "has been accepted and will be processed soon.",
+            "orderRejectedMessage": "has not been accepted.",
+            "backToShopping": "Back to shopping"
+        },
+        "errors": {
+            "genericBillingError": "There was a problem with payment details specified.",
+            "paymentNotVerified": "We were unable to verify the payment. Please try again.",  
+            "paymentInterrupted": "Payment was interrupted. Please try again.",  
+            "paymentCanceled": "The order has been canceled."        
+        },
+        "emailPlaceholder": "Email",
+        "firstNamePlaceholder": "First Name",
+        "lastNamePlaceholder": "Last Name",
+        "addressPlaceholder": "Address",
+        "countryPlaceholder": "Country",
+        "statePlaceholder": "State/Province",
+        "cityPlaceholder": "City",
+        "postalCodePlaceholder": "Postal code",
+        "phonePlaceholder": "Phone"
+    },
+    "search": {
+        "cancel": "Cancel",
+        "placeholder": "Search",
+        "noProducts": "No matching products have been found"
+    },
+    "about": {
+        "title": "About Us",
+        "contacts": "Contacts",
+        "aboutUs": "About Us",
+        "phone": "Phone",
+        "email": "Email",
+        "website": "Website",
+        "address": "Address",
+        "aboutText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula imperdiet augue, vitae euismod ipsum rutrum quis. Nulla bibendum vehicula pharetra. Ut dignissim tortor massa, eget vehicula dui luctus id. Quisque volutpat sodales magna sit amet ultrices. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula imperdiet augue, vitae euismod ipsum rutrum quis. Nulla bibendum vehicula pharetra. Ut dignissim tortor massa, eget vehicula dui luctus id. Quisque volutpat sodales magna sit amet ultrices."
+    },
+    "common": {
+        "back": "Back",
+        "showMore": "Show more",
+        "showLess": "Show less",
+        "pullToRefresh": "Pull to refresh..."
+    },
+    "error": {
+        "offlineError": "Your device appears to be offline. Please establish internet connection in order to continue.",
+        "operationError": "Unable to perform the operation. Please check your connection and try again.",
+        "dataError": "Could not load data. Please check your connection and try again.",
+        "sessionError": "You are no longer signed in. Please start the checkout again.",
+        "deviceRequired": "Device is required to perform this operation."
+    },
+    "auth": {
+        "signIn": "Sign In",
+        "register": "Sign Up",
+        "email": "E-mail",
+        "name": "Name",
+        "username": "Username or E-mail",
+        "password": "Password",
+        "errorMessage": "Could not sign-in. Please check your login and password.",
+        "registrationErrorMessage": "Could not register. Please check your input and try again.",
+        "haveAnAccount": "Have an account?",
+        "signInAction": "Sign In."
+    }    
+}

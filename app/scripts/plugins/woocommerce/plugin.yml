@@ -1,0 +1,38 @@
+# Plugin name
+name: woocommerce
+
+# URL of Woocommerce store
+api_host: http://wildlycoffee.co.ke
+
+# Id of the root category. 
+root_category:      0
+
+# Sorting options
+sorting_options:
+
+  - id:     date_asc
+    label:  products.sortNewest
+    value:  date+asc  
+
+  - id:     title_asc
+    label:  products.sortAZ
+    value:  title+asc
+
+  - id:     title_desc
+    label:  products.sortZA
+    value:  title+desc
+
+# Capabilities
+
+capabilities:
+  
+  inAppCheckout: true 
+  authentication: true
+  orderHistory: true
+  paymentMethods: 
+    - stripe
+    - paypal
+    - cod
+    - bacs
+    - cheque
+

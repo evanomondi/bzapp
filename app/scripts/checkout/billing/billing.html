@@ -1,0 +1,63 @@
+<ion-view side-menu-active="false" view-title="{{ :: 'checkout.billing.title' | translate}}">
+    <ion-nav-buttons side="left">
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+    </ion-nav-buttons>
+    <ion-content overflow-scroll="true" class="has-footer billing content-padding">
+        <div class="content-wrapper" ng-if="billing.viewData.showContent">
+            <!-- billing form below -->
+            <form novalidate name="billing.viewData.form">
+                <!-- Billing method selection below -->
+                <div class="billing-methods">
+                    <div class="section-title">
+                        {{ :: 'Payment methods' | translate }} </div>
+                    <div class="list list-inset form-list">
+                        <div class="row method-option" ng-repeat="method in billing.viewData.paymentMethods track by method.id" ng-class="{ 'selected' : billing.viewData.checkoutSession.paymentMethod.id === method.id }">
+                            <div ng-click="billing.selectPaymentMethod(method)">
+                                <i class="icon method-check" ng-class="{ 'ion-ios-checkmark-outline' : billing.viewData.checkoutSession.paymentMethod.id === method.id,  'ion-ios-circle-outline' : billing.viewData.checkoutSession.paymentMethod.id !== method.id }"></i>
+                                <span>{{ :: method.title }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" ng-model="billing.viewData.checkoutSession.paymentMethod.id" required>
+                </div>
+                <div ng-show="billing.viewData.hasCCForm">
+                    <div class="section-title">
+                        {{ :: 'checkout.billing.cardDetailsSectionTitle' | translate }}
+                    </div>
+                    <div class="list list-inset form-list">
+                        <label class="item item-input">
+                            <input type='text' input-mask="cardNumber" placeholder="{{ :: 'checkout.billing.cardNumberPlaceholder' | translate }}" ng-model="billing.viewData.payment.cardNumber" ng-required="billing.viewData.hasCCForm">
+                        </label>
+                        <label class="item item-input">
+                            <input type="text" placeholder="{{ :: 'checkout.billing.nameOnCardPlacehdoler' | translate}}" ng-model="billing.viewData.payment.cardHolderName" ng-required="billing.viewData.hasCCForm">
+                        </label>
+                        <div class="item-with-two-inputs">
+                            <label class="item item-input">
+                                <input type='number' input-mask="cardMonth" placeholder="{{ :: 'checkout.billing.expiryMonthPlaceholder' | translate }}" ng-model="billing.viewData.payment.validThruMonth" ng-required="billing.viewData.hasCCForm">
+                            </label>
+                            <label class="item item-input">
+                                <input type='number' input-mask="cardYear" placeholder="{{ :: 'checkout.billing.expiryYearPlaceholder' | translate }}" ng-model="billing.viewData.payment.validThruYear" ng-required="billing.viewData.hasCCForm">
+                            </label>
+                        </div>
+                        <label class="item item-input">
+                            <input type='number' input-mask="cardCVV" placeholder="{{ :: 'checkout.billing.cvvPlaceholder' | translate }}" ng-model="billing.viewData.payment.cvv" ng-required="billing.viewData.hasCCForm">
+                        </label>
+                    </div>
+                </div>
+                <div class="section-title">{{ :: 'checkout.billing.billingAddressSectionTitle' | translate }}</div>
+                <div class="list list-inset form-list">
+                    <ion-checkbox ng-if="billing.viewData.checkoutSession.shippingAddress" class="checkbox-transparent" ng-model="billing.viewData.useShippingAddressForBilling" ng-change="billing.onBillingAddressToggled()">{{ :: 'checkout.billing.useShippingAddressForBilling' | translate }}</ion-checkbox>
+                </div>
+                <!-- Billing address selection below -->
+                <div ng-if="(!billing.viewData.useShippingAddressForBilling || !billing.viewData.checkoutSession.shippingAddress) && billing.viewData.showContent">
+                    <div class="address-form" address="billing.viewData.checkoutSession.billingAddress" countries="billing.viewData.countries" address-changed="billing.addressChanged()"></div>
+                </div>
+            </form>
+        </div>
+    </ion-content>
+    <ion-footer-bar class="bar bar-footer bar-checkout">
+        <checkout-footer amount="billing.viewData.total" currency="billing.viewData.currency" message="'checkout.includingTaxes' | translate"></checkout-footer>
+        <button class="button button-clear icon-right ion-ios-arrow-forward pull-right" ng-disabled="!billing.viewData.form.$valid" button-spinner="{{billing.viewData.isProcessing}}" ng-click="billing.processBilling()">{{::'checkout.billing.continueToSummary' | translate}}&nbsp;</button>
+    </ion-footer-bar>
+</ion-view>

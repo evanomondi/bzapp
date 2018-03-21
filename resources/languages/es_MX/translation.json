@@ -1,0 +1,160 @@
+{
+    "menu": {
+        "home": "Inicio",
+        "myCart": "Mi Carrito",
+        "orderHistory": "Ordenes",
+        "wishlist": "Wishlist",
+        "about": "Sobre",
+        "signIn": "Iniciar",
+        "signOut": "Salir"
+    },
+    "products": {
+        "title": "Productos",
+        "all": "Todos",
+        "noProducts": "Esta categoría no tiene productos",
+        "sortFeatured": "Recomendados",
+        "sortAZ": "A-Z",
+        "sortZA": "Z-A",
+        "sortNewest": "Nuevos",
+        "sortPopularity": "Populares",
+        "sortPriceAsc": "Mayor Precio",
+        "sortPriceDesc": "Menor Precio",
+        "sortRating": "Rating"
+    },
+    "productDetails": {
+        "addToCart": "Comprar",
+        "soldOut": "Agotado"
+    },
+    "wishlist": {
+        "title": "Wishlist",
+        "noProducts": "No se han agregado productos"
+    },
+    "cart": {
+        "title": "Carrito",
+        "noProducts": "Su carrito esta vacío",
+        "checkout": "Pagar"
+    },
+    "orderHistory": {
+        "title": "Ordenes",
+        "ordersEmptyMessage": "No tiene ninguna orden.",
+        "ordersErrorMessage": "No se encontraron ordenes."
+    },
+    "orderDetails": {
+        "title": "Orden",        
+        "ordersErrorMessage": "No se encontraron ordenes.",
+        "totalProducts": "Total de productos",
+        "totalShipping": "Total envío",
+        "taxes": "Impuestos",
+        "fees": "Fees",
+        "discount": "Descuento",
+        "total": "Total"
+    },
+    "checkout": {
+        "excludingTaxes": "excl. impuestos",
+        "includingTaxes": "incl. impuestos",
+        "shipping": {
+            "title": "Envío",
+            "continueToPayment": "Pagar",
+            "method": {
+                "free": "Gratis",
+                "errorMessage": "No se encontraron metodos de envío.",
+                "emptyMessage": "No se encontraron metodos de envío."
+            },
+            "shippingSectionTitle": "Dirección de envío",
+            "shippingMethodSectionTitle": "Método de envío"
+        },
+        "billing": {
+            "title": "Billing",
+            "cardDetailsSectionTitle": "Card details",
+            "cardNumberPlaceholder": "Card number",
+            "nameOnCardPlacehdoler": "Name on card",
+            "expiryMonthPlaceholder": "MM",
+            "expiryYearPlaceholder": "YY",
+            "cvvPlaceholder": "CVV",
+            "billingAddressSectionTitle": "Billing address",
+            "useShippingAddressForBilling": "Use shipping address for billing",
+            "continueToSummary": "Summary",
+            "errorPopupTitle": "Billing error"
+        },
+        "modal": {
+            "countryTitle": "Seleccionar País",
+            "stateTitle": "Seleccionar Estado",
+            "close": "Cerrar"
+        },
+        "summary": {
+            "title": "Resumen",
+            "completeCheckout": "Completar pago",
+            "paymentMethod": "Método de pago",
+            "shippingMethod": "Método de envío",
+            "totalProducts": "Total Productos",
+            "totalShipping": "Total envío",
+            "taxes": "impuestos",
+            "fees": "comisiones",
+            "total": "Total",
+            "card": "Tarjeta"
+        },
+        "thankyou": {
+            "orderAccepted": "Gracias!",
+            "orderRejected": "Lo sentimos.",
+            "order": "Orden",
+            "orderAcceptedMessage": "ha sido aceptada y pronto se procesara.",
+            "orderRejectedMessage": "No fue aceptada.",
+            "backToShopping": "Regresar"
+        },
+        "errors": {
+            "genericBillingError": "Hubo un error con el pago.",
+            "paymentNotVerified": "No se pudo verificar el pago. Trate de nuevo.",  
+            "paymentInterrupted": "Error, intentar de nuevo.",  
+            "paymentCanceled": "La orden fue cancelada."        
+        },
+        "emailPlaceholder": "Email",
+        "firstNamePlaceholder": "Nombre",
+        "lastNamePlaceholder": "Apellido",
+        "addressPlaceholder": "Dirección",
+        "countryPlaceholder": "País",
+        "statePlaceholder": "Estado",
+        "cityPlaceholder": "Ciudad",
+        "postalCodePlaceholder": "Código Postal",
+        "phonePlaceholder": "Teléfono"
+    },
+    "search": {
+        "cancel": "Cancelar",
+        "placeholder": "Buscar",
+        "noProducts": "No se encontraron productos"
+    },
+    "about": {
+        "title": "Quíenes Somos",
+        "contacts": "Contacto",
+        "aboutUs": "Quíenes Somos",
+        "phone": "Teléfono",
+        "email": "Email",
+        "website": "Página",
+        "address": "Dirección",
+        "aboutText": "Lorem ipsum"
+    },
+    "common": {
+        "back": "Atras",
+        "showMore": "Ver más",
+        "showLess": "Ver menos",
+        "pullToRefresh": "Jalar para refrescar..."
+    },
+    "error": {
+        "offlineError": "Sin conexión.",
+        "operationError": "Unable to perform the operation. Please check your connection and try again.",
+        "dataError": "Could not load data. Please check your connection and try again.",
+        "sessionError": "No esta logeado, empezar con el checkout de nuevo.",
+        "deviceRequired": "Requerido para hacer esta operación."
+    },
+    "auth": {
+        "signIn": "Entrar",
+        "register": "Registrar",
+        "email": "E-mail",
+        "name": "Nombre",
+        "username": "Usuario o Contraseña",
+        "password": "Contraseña",
+        "errorMessage": "No se pudo logear, verificar Usuario o Contraseña.",
+        "registrationErrorMessage": "No se pudo registrar, intentar de nuevo.",
+        "haveAnAccount": "Ya tienes cuenta?",
+        "signInAction": "Entrar."
+    }    
+}

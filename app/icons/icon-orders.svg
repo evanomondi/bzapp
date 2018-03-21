@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="23px"
+   height="32px"
+   viewBox="0 0 23 32"
+   version="1.1"
+   id="svg3789"
+   sodipodi:docname="icon-orders.svg"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06">
+  <metadata
+     id="metadata3793">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1533"
+     inkscape:window-height="1053"
+     id="namedview3791"
+     showgrid="false"
+     inkscape:zoom="26.59375"
+     inkscape:cx="5.2579318"
+     inkscape:cy="17.504113"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="Page-1" />
+  <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title3766">orders</title>
+  <desc
+     id="desc3768">Created with Sketch.</desc>
+  <defs
+     id="defs3770" />
+  <g
+     id="Page-1"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd">
+    <path
+       style="fill:#000000"
+       inkscape:connector-curvature="0"
+       id="Combined-Shape"
+       d="M 9.0505086,9 V 9 H 3.0068483 C 2.4427424,9 2,9.4414087 2,9.9907522 V 29.009248 C 2,29.551204 2.4506799,30 3.0068483,30 H 19.993152 C 20.557258,30 21,29.558591 21,29.009248 V 9.9907522 C 21,9.4487957 20.54932,9 19.993152,9 H 13.949491 V 7 l 1.3998,1.4284819 C 14.32919,9.4281012 12.957176,10 11.5,10 10.042824,10 8.6708105,9.4281012 7.6507088,8.4284819 L 9.0505086,7 Z m 0,-2 V 7 7 C 9.6817772,7.6185935 10.546348,8 11.5,8 12.453653,8 13.318223,7.6185935 13.949491,7 h 6.043661 C 21.653788,7 23,8.3441086 23,9.9907522 V 29.009248 C 23,30.660995 21.664009,32 19.993152,32 H 3.0068483 C 1.3462118,32 0,30.655891 0,29.009248 V 9.9907522 C 0,8.3390054 1.3359915,7 3.0068483,7 Z" />
+    <path
+       style="fill:#000000"
+       inkscape:connector-curvature="0"
+       id="path3773"
+       d="m 14.964556,4 h 1.036021 C 17.657113,4 19,5.3488159 19,7.0057983 V 11.497101 11 H 4 V 11.497101 7.0057983 C 4,5.3457418 5.3443507,4 6.9994225,4 H 8.0354444 C 8.012086,4.1633015 8,4.3302393 8,4.5 8,6.4329966 9.5670034,8 11.5,8 13.432997,8 15,6.4329966 15,4.5 15,4.3302393 14.987914,4.1633015 14.964556,4 Z" />
+    <rect
+       style="fill:#000000"
+       height="4"
+       width="4"
+       y="13"
+       x="4"
+       id="Rectangle-4" />
+    <rect
+       style="fill:#000000"
+       height="4"
+       width="4"
+       y="18"
+       x="4"
+       id="rect3776" />
+    <rect
+       style="fill:#000000"
+       height="4"
+       width="4"
+       y="23"
+       x="4"
+       id="rect3778" />
+    <polygon
+       style="fill:#000000"
+       points="19.5,16 19.5,14 18.5,14 10.5,14 9.5,14 9.5,16 10.5,16 18.5,16 "
+       id="Line" />
+    <polygon
+       style="fill:#000000"
+       points="19.5,21 19.5,19 18.5,19 10.5,19 9.5,19 9.5,21 10.5,21 18.5,21 "
+       id="polygon3781" />
+    <polygon
+       style="fill:#000000"
+       points="19.5,26 19.5,24 18.5,24 10.5,24 9.5,24 9.5,26 10.5,26 18.5,26 "
+       id="polygon3783" />
+    <path
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 11.5,0.00976563 c -2.4734367,0 -4.5,2.02656327 -4.5,4.49999997 0,2.4734368 2.0265633,4.5 4.5,4.5 2.473437,0 4.5,-2.0265632 4.5,-4.5 0,-2.4734367 -2.026563,-4.49999997 -4.5,-4.49999997 z m 0,1.99999997 c 1.392557,0 2.5,1.1074435 2.5,2.5 0,1.3925565 -1.107443,2.5 -2.5,2.5 -1.392557,0 -2.5,-1.1074435 -2.5,-2.5 0,-1.3925565 1.107443,-2.5 2.5,-2.5 z"
+       id="path3806"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

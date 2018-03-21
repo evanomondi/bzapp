@@ -1,0 +1,41 @@
+<ion-view side-menu-active="false" view-title="{{::productlist.pageTitle}}">
+    <ion-nav-buttons side="left">
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon app-icon icon-search" search-button>
+        </button>
+        <button class="button button-icon app-icon icon-cart" ui-sref="app.shopping_cart" cart-button>
+        </button>
+    </ion-nav-buttons>
+    <ion-content scroll="false" hide-onscroll="['bar-footer', 'slidingTabs']" hide-onscroll-offset="48" class="products-content">
+        <ion-slide-box active-slide="productlist.activeSlide" ion-slide-tabs="" on-slide-changed="productlist.handleSlideChange($index)" show-pager="false" slide-tabs-scrollable="true" slide-tabs-touch-animation="false">
+            <ion-slide ion-slide-tab-label="{{::slide.title}}" ng-repeat="slide in ::productlist.subcategories track by $index">
+                <ion-scroll ng-if="$index == productlist.activeSlide" loader-pane="productlist.productRequest" loader-pane-empty-message="productlist.noProductsText" class="slideContent hide-onscroll-content" lazy-scroll="" overflow-scroll="true">
+                    <div class="list product-list in-slide" ng-class="{'gridview': productlist.viewOptions.viewMode == 'gridview', 'listview': productlist.viewOptions.viewMode == 'listview'}" ng-if="$index == productlist.activeSlide && !productlist.productsLoading || productlist.infiniteLoading">
+                        <div class="product-item" ng-repeat="product in productlist.products track by product.id" ng-click="productlist.navigateToProductDetails(product)">
+                            <div class="image animated" image-lazy-background-image="true" image-lazy-loaded-class="fadeIn" image-lazy-src="{{product.image}}" image-lazy-distance-from-bottom-to-load="300">
+                            </div>
+                            <div class="brand one-line-label" ng-show="productlist.viewOptions.displayVendor">
+                                {{::product.vendor}}
+                            </div>
+                            <div class="name one-line-label">
+                                {{::product.title}}
+                            </div>
+                            <div class="prices-block wholesale-price" item="::product" currency="productlist.viewOptions.currency"></div>
+                        </div>
+                    </div>
+                    <ion-infinite-scroll ng-if="$index == productlist.activeSlide && !productlist.noMoreProducts && (!productlist.productsLoading || productlist.infiniteLoading)" spinner="{{ productlist.isAndroid() ? 'crescent' : 'lines' }}" on-infinite="productlist.loadMoreProducts()" immediate-check="false" distance="1%">
+                    </ion-infinite-scroll>
+                </ion-scroll>
+            </ion-slide>
+        </ion-slide-box>
+        <div class="bar bar-footer hide-down" ng-show="productlist.products.length > 0" ng-if="::productlist.hasOptionBar">
+            <label ng-if="productlist.products.length > 0" class="item item-input item-select sort-select select-auto-width">
+                <select ng-model="::productlist.viewOptions.sortOption" ng-options="::option.label | translate for option in ::productlist.viewOptions.sortOptions track by option.id" ng-change="productlist.handleSortChange()">
+                </select>
+            </label>
+            <button class="button button-icon app-icon pull-right" ng-class="{'icon-gridview': productlist.viewOptions.viewMode == 'gridview', 'icon-listview': productlist.viewOptions.viewMode == 'listview'}" ng-click="::productlist.toggleViewMode()">
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,38 @@
+<ion-view side-menu-active="false" view-title="{{productlist.pageTitle}}">
+    <ion-nav-buttons side="left">
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon app-icon icon-search" search-button>
+        </button>
+        <button class="button button-icon app-icon icon-cart" ui-sref="app.shopping_cart" cart-button>
+        </button>
+    </ion-nav-buttons>
+    <ion-content scroll="false" hide-onscroll="['bar-footer', 'slidingTabs']" hide-onscroll-offset="48" class="products-content">
+        <ion-scroll loader-pane="productlist.productRequest" loader-pane-empty-message="productlist.noProductsText" class="slideContent hide-onscroll-content" lazy-scroll="" overflow-scroll="true">
+            <div class="list product-list" ng-class="{'gridview': productlist.viewOptions.viewMode == 'gridview', 'listview': productlist.viewOptions.viewMode == 'listview'}" ng-if="!productlist.productsLoading || productlist.infiniteLoading">
+                <div class="product-item" ng-repeat="product in productlist.products | limitTo:productlist.limit track by product.id " ng-click="productlist.navigateToProductDetails(product)">
+                    <div class="image animated" image-lazy-background-image="true" image-lazy-loaded-class="fadeIn" image-lazy-src="{{::product.image}}" image-lazy-distance-from-bottom-to-load="300">
+                        <button ng-if="::productlist.allowRemoveProducts" class="button wishlist-remove button-small button-delete round-button icon ion-trash-a" ng-click="::productlist.removeFromWishlist(product.id); $event.stopPropagation();"></button>
+                    </div>
+                    <div class="brand one-line-label" ng-show="productlist.viewOptions.displayVendor">
+                        {{::product.vendor}}
+                    </div>
+                    <div class="name one-line-label">
+                        {{::product.title}}
+                    </div>
+                    <div class="prices-block wholesale-price" item="::product" currency="productlist.viewOptions.currency"></div>
+                </div>
+            </div>
+            <ion-infinite-scroll ng-if="!productlist.noMoreProducts && (!productlist.productsLoading || productlist.infiniteLoading)" on-infinite="productlist.loadMoreProducts()" spinner="lines" immediate-check="false" distance="1%">
+            </ion-infinite-scroll>
+        </ion-scroll>
+        <div class="bar bar-footer hide-down" ng-show="productlist.products.length > 0" ng-if="::productlist.hasOptionBar">
+            <label ng-if="productlist.products.length > 0" class="item item-input item-select sort-select select-auto-width">
+                <select ng-model="::productlist.viewOptions.sortOption" ng-options="::option.label | translate for option in ::productlist.viewOptions.sortOptions track by option.id" ng-change="productlist.handleSortChange()">
+                </select>
+            </label>
+            <button class="button button-icon app-icon pull-right" ng-class="{'icon-gridview': productlist.viewOptions.viewMode == 'gridview', 'icon-listview': productlist.viewOptions.viewMode == 'listview'}" ng-click="::productlist.toggleViewMode()">
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

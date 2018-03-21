@@ -1,0 +1,42 @@
+.order-item {
+	justify-content: space-between;
+	padding: 10px 10px 10px 10px;
+	border-bottom: 1px solid $list-border-color;
+}
+
+.order-item__line {	
+	line-height: 1.1em;
+}
+
+.order-item__label, .order-item__products {
+	color: $text-color-light;
+}
+
+.order-item__products {
+	margin: 10px 0;
+	font-size: 12px;
+}
+
+.order-item__price {
+	
+}
+
+.order-item__value {
+	font-weight: 500;
+}
+
+.order-item__details {
+	font-size: 20px;
+	border-radius: 2em;
+	width: 2em;
+	height: 2em;
+	background-color: $details-color;
+	text-align: center;
+	vertical-align: middle;
+	flex: 0 0 2em;
+	.icon {
+		line-height: 2em;
+		color: $bar-text;
+	}
+	margin-left: 10px;
+}

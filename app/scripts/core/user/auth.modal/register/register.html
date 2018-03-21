@@ -1,0 +1,25 @@
+<ion-content class="content-padding" scroll="false" ng-controller="RegisterController as registerController">
+    <form novalidate name="registerForm" ng-submit="registerController.onSubmit()">
+        <div class="list list-inset form-list">
+            <label class="item item-input">
+                <i class="icon app-icon icon-mail-alt input-icon-left"></i>
+                <input type="text" placeholder="{{'auth.email' | translate}}" ng-model="registerController.username" required>
+            </label>
+            <label class="item item-input">
+                <i class="icon ion-android-person input-icon-left"></i>
+                <input type="text" placeholder="{{'auth.name' | translate}}" ng-model="registerController.name" required>
+            </label>
+            <label class="item item-input">
+                <i class="icon app-icon icon-password input-icon-left"></i>
+                <input type="password" placeholder="{{'auth.password' | translate}}" ng-model="registerController.password" required>
+            </label>
+        </div>
+        <button ng-disabled="registerForm.$invalid || registerController.isRegistering" type="submit" class="button button-block button-dark login-button" button-spinner="{{registerController.isRegistering}}" button-spinner-delay="500">
+            {{'auth.register' | translate}}
+        </button>
+    </form>
+    <div class="bar bar-footer">
+        <h1 class="title"><a class="button button-clear button-positive button-small button-in-bar-title" ng-click="registerController.goToLogin()">{{'auth.signIn' | translate}}</a></h1>
+    </div>
+</ion-content>
+

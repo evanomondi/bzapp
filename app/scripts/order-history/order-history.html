@@ -1,0 +1,37 @@
+<ion-view view-title="{{'orderHistory.title' | translate}}">
+    <ion-nav-buttons side="left">
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+    </ion-nav-buttons>
+    <ion-content loader-pane="orderHistory.viewData.orderLoader" loader-pane-empty-message="::orderHistory.viewData.emptyMessage" loader-pane-error-message="::orderHistory.viewData.errorMessage" overflow-scroll="true">
+        <ion-refresher pulling-text="{{'common.pullToRefresh' | translate}}" on-refresh="orderHistory.refreshOrders()">
+        </ion-refresher>
+        <div class="order-item flex-horizontal" ng-repeat="order in orderHistory.viewData.orders track by order.id" ui-sref="app.order-details({orderId: order.id})">
+            <div class="flex-vertical-spread">
+                <div class="order-item__line">
+                    <div class="order-item__info">
+                        <span class="order-item__label">Order ID:</span>
+                        <span class="order-item__value">{{::order.id}}</span>
+                    </div>
+                    <div class="order-item__info">
+                        <span class="order-item__label">Order Time:</span>
+                        <span class="order-item__value">{{::order.createdAt | date: 'yyyy-MM-dd HH:mm'}}</span>
+                    </div>
+                    <div class="order-item__info">
+                        <span class="order-item__label">Status:</span>
+                        <span class="order-item__value">{{order.status}}</span>
+                    </div>
+                </div>
+                <div class="order-item__line order-item__products two-line-label">
+                    {{::order.products}}
+                </div>
+                <div class="big-price order-item__line order-item__price">{{::order.totals.total | currency: orderHistory.currency}}</div>
+            </div>
+            <div class="order-item__details">
+                <i class="icon ion-chevron-right"></i>
+            </div>
+        </div>
+        <ion-infinite-scroll ng-if="!orderHistory.viewData.noMoreOrders" on-infinite="orderHistory.loadMoreOrders()" immediate-check="false" distance="5%" spinner="lines">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

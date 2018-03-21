@@ -1,0 +1,46 @@
+<div class="menu-top">
+    <div ng-if="menuCtrl.showLogo" class="logo"></div>
+    <div ng-if="!menuCtrl.showLogo" class="avatar"></div>
+    <div ng-if="!menuCtrl.user" class="menu-title one-line-label">{{menuCtrl.sideMenuTitle}}</div>
+    <div ng-if="menuCtrl.user" class="menu-title one-line-label">{{menuCtrl.user.firstName}} {{menuCtrl.user.lastName}}</div>
+    <hr class="menu-top-separator">
+</div>
+<div class="menu-list">
+    <div class="list">
+        <div ng-repeat="item in menuCtrl.menuItems" ng-switch="item.type">
+          <a ng-switch-when="page" class="item" href="#" ui-sref="{{item.ref}}" menu-close-no-root="true" app-capability="{{item.capability}}">
+            <i class="app-icon {{item.icon}} side-menu-icon"></i>
+            <div class="side-menu-link-text">{{ ::item.title | translate}}</div>
+            <div class="side-menu-badge" ng-if="item.badgeCountProvider && menuCtrl.getBadgeCount(item.badgeCountProvider) > 0">{{menuCtrl.getBadgeCount(item.badgeCountProvider)}}</div>
+          </a>
+          <a ng-switch-when="secure-page" class="item" href="#" menu-close-no-root="true" app-capability="{{item.capability}}" requires-auth="{{item.ref}}">
+            <i class="app-icon {{item.icon}} side-menu-icon"></i>
+            <div class="side-menu-link-text">{{ ::item.title | translate}}</div>
+            <div class="side-menu-badge" ng-if="item.badgeCountProvider && menuCtrl.getBadgeCount(item.badgeCountProvider) > 0">{{menuCtrl.getBadgeCount(item.badgeCountProvider)}}</div>
+          </a>
+          <div ng-switch-when="auth" app-capability="authentication" >
+            <a class="item" href="#" ng-click="menuCtrl.openAuthWindow()" ng-if="!menuCtrl.user">
+                <i class="app-icon icon-signin side-menu-icon"></i>
+                <div class="side-menu-link-text">{{ ::'menu.signIn' | translate}}</div>
+            </a>
+            <a class="item" href="#" ng-click="menuCtrl.logout()" ng-if="menuCtrl.user">
+                <i class="app-icon icon-signout side-menu-icon"></i>
+                <div class="side-menu-link-text">{{ ::'menu.signOut' | translate}}</div>
+            </a>
+          </div>
+          <a ng-switch-when="category" class="item" menu-close-no-root="true" ng-click="menuCtrl.navigateToCategory(item.ref)">
+            <i class="app-icon {{item.icon}} side-menu-icon"></i>
+            <div class="side-menu-link-text">{{ ::item.title | translate}}</div>
+          </a>
+          <a ng-switch-when="external" class="item" href="#" menu-close-no-root="true" ng-click="menuCtrl.navigateToExternalPage(item.ref)">
+            <i class="app-icon {{item.icon}} side-menu-icon"></i>
+            <div class="side-menu-link-text">{{ ::item.title | translate}}</div>
+          </a>
+          <a ng-switch-when="action" class="item" href="{{item.ref}}" menu-close-no-root="true" >
+            <i class="app-icon {{item.icon}} side-menu-icon"></i>
+            <div class="side-menu-link-text">{{ ::item.title | translate}}</div>
+          </a>
+        </div>
+    </div>
+</div>
+<div ng-if="menuCtrl.useBlurryBackground" class="side-menu-background"></div>

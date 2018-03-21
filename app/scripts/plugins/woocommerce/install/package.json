@@ -1,0 +1,20 @@
+{
+  "name": "mobilefront-woocommerce-plugin-install",
+  "version": "1.2.0",
+  "description": "MobileFront Woocommerce plugin installation script.",
+  "main": "index.js",
+  "scripts": {
+    "gulp": "./node_modules/.bin/gulp",
+    "postinstall": "gulp --silent"
+  },
+  "devDependencies": {
+    "gulp": "github:gulpjs/gulp#4.0",    
+    "gulp-load-plugins": "^1.1.0",
+    "gulp-template": "^4.0.0"
+  },
+  "dependencies": {
+    "inquirer": "^1.1.2",
+    "terminal-kit": "^0.24.21"    
+  },
+  "author": "MobileFront"
+}

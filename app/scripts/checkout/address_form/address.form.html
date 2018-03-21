@@ -1,0 +1,46 @@
+<div class="list list-inset form-list">
+    <ng-transclude></ng-transclude>
+    <label class="item item-input">
+        <input type="text" placeholder="{{ :: 'checkout.firstNamePlaceholder' | translate }}" ng-model="form.address.firstName" ng-model-options="{ updateOn: 'blur' }" ng-change="form.addressChanged()" required>
+    </label>
+    <label class="item item-input">
+        <input type="text" placeholder="{{ :: 'checkout.lastNamePlaceholder' | translate }}" ng-model="form.address.lastName" ng-model-options="{ updateOn: 'blur' }" ng-change="form.addressChanged()" required>
+    </label>
+    <label class="item item-input">
+        <input type="text" placeholder="{{ :: 'checkout.addressPlaceholder' | translate }}" ng-model="form.address.address1" ng-model-options="{ updateOn: 'blur' }" ng-change="form.addressChanged()" required>
+    </label>
+    <label class="item item-input">
+        <input type="text" placeholder="{{ :: 'checkout.phonePlaceholder' | translate }}" ng-model="form.address.phone" ng-model-options="{ updateOn: 'blur' }" required>
+    </label>
+    <div class="item-with-two-inputs">
+        <label class="item item-input">
+            <button modal-select modal-title="{{ :: 'checkout.modal.countryTitle' | translate }}" cancel-button="{{ :: 'checkout.modal.close' | translate }}" options="form.availableCountries" has-search="true" search-placeholder="{{ :: 'search.placeholder' | translate}}" cancel-search-button="{{ :: 'search.cancel' | translate}}" search-properties="form.searchProperties" ng-model="form.address.country" option-property="id" hide-footer="true" ng-class="{ 'has-placeholder': !form.address.country}" class="button button-clear button-full button-small button-select icon-right ion-android-arrow-dropdown" on-select="form.handleCountryChanged()" header-footer-class="bar-dark" sub-header-class="bar-dark" ng-disabled="form.availableCountries.length === 1">
+                <span ng-if="!form.address.country" translate="checkout.countryPlaceholder"></span>
+                <span ng-if="form.address.country" translate="{{ 'countries.' + form.address.country + '.title' }}"></span>
+                <div class="option">
+                    {{ option.title }}
+                </div>
+            </button>
+            <input type="hidden" ng-model="form.address.country" required>
+        </label>
+        <label class="item item-input" ng-if="form.availableStates.length > 0">
+            <button modal-select modal-title="{{ :: 'checkout.modal.stateTitle' | translate }}" cancel-button="{{ :: 'checkout.modal.close' | translate }}" search-placeholder="{{ :: 'search.placeholder' | translate}}" cancel-search-button="{{ :: 'search.cancel' | translate}}" search-properties="form.searchProperties" options="form.availableStates" hide-footer="true" has-search="true" ng-model="form.selectedState" ng-class="{ 'has-placeholder': !form.address.state}" class="button button-clear button-full button-small button-select icon-right ion-android-arrow-dropdown" on-select="form.handleStateChanged()" ng-bind-html="form.getStateLabel() | trustHtml" header-footer-class="bar-dark" sub-header-class="bar-dark">
+                <div class="option">
+                    <span ng-bind-html="option.title | trustHtml"></span>
+                </div>
+            </button>
+            <input type="hidden" ng-model="form.selectedState" required>
+        </label>
+        <label class="item item-input" ng-if="form.availableStates.length === 0">
+            <input type="text" placeholder="{{ :: 'checkout.postalCodePlaceholder' | translate }}" ng-model="form.address.postcode" ng-model-options="{ updateOn: 'blur' }" ng-change="form.addressChanged()" required>
+        </label>
+    </div>
+    <div class="item-with-two-inputs">
+        <label class="item item-input">
+            <input type="text" placeholder="{{ :: 'checkout.cityPlaceholder' | translate }}" ng-model="form.address.city" ng-model-options="{ updateOn: 'blur' }" ng-change="form.addressChanged()" required>
+        </label>
+        <label class="item item-input" ng-if="form.availableStates.length > 0">
+            <input type="text" placeholder="{{ :: 'checkout.postalCodePlaceholder' | translate }}" ng-model="form.address.postcode" ng-model-options="{ updateOn: 'blur' }" ng-change="form.addressChanged()" required>
+        </label>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+.thankyou-section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+    color: $text-color-main;
+    justify-content: center;
+    padding: 15px;
+
+    .thankyou-icon {
+        flex: 0 0 130px;
+        background-image: url(../images/thankyou/tick_icon.png);
+        -webkit-background-size: contain;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 50% 50%;
+        margin-bottom: 15%;
+
+        &-fail {
+            background-image: url(../images/thankyou/error_icon.png);
+        }
+    }
+
+    .thankyou-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 4%;
+    }
+
+    .thankyou-message {
+        font-size: 18px;
+        font-weight: 300;
+        margin-bottom: 10%;
+        &.thankyou-stretch {
+            flex: 0 1 auto;
+            overflow-y: auto;
+            overflow-scrolling: touch;
+        }
+    }
+
+    .thankyou-message {
+        font-size: 18px;
+        font-weight: 300;
+        margin-bottom: 10%;
+    }
+
+    .thankyou-button {
+        color: $text-color-main;
+        border: 1px solid $text-color-main;
+        font-size: 20px;
+        border-radius: 25px;
+
+        &.activated, &.active {
+            background-color: lighten($text-color-main, 10%);
+            color: #FFF;
+        }
+    }
+}
+

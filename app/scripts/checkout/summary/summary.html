@@ -1,0 +1,55 @@
+<ion-view side-menu-active="false" view-title="{{ 'checkout.summary.title' | translate}}">
+    <ion-nav-buttons side="left">
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+    </ion-nav-buttons>
+    <ion-content loader-pane="summary.viewData.loadingRequest" loader-pane-empty-message="::summary.emptyCartMessage" lazy-scroll="" overflow-scroll="true" class="has-footer">
+        <div class="summary" ng-if="summary.viewData.showContent && summary.viewData.hasCart">
+            <div class="order-product flex-horizontal" ng-repeat="item in summary.viewData.cart.items track by item.id">
+                <div class="order-product__image animated" image-lazy-background-image="true" image-lazy-loaded-class="fadeIn" image-lazy-src="{{::item.image}}"></div>
+                <div class="flex-vertical-spread order-product__details">
+                    <div class="order-product__title three-line-label">{{::item.title}}</div>
+                    <div class="order-product__variations two-line-label">{{::item.variantDescription}}</div>
+                </div>
+                <div class="big-price order-product__price">
+                    <div class="order-product__price--base" ng-bind-html="::item.finalPrice * item.quantity | currencyFormatter : summary.currency"></div>
+                    <div class="order-product__quantity">x{{::item.quantity}}</div>
+                </div>
+            </div>
+            <div class="order-totals">
+                <div class="order-total">
+                    <span class="order-total__label">{{:: 'checkout.summary.paymentMethod' | translate }}</span>
+                    <span class="order-total__value">{{ :: summary.viewData.checkoutSession.paymentMethod.title }}</span>
+                </div>
+                <div class="order-total">
+                    <span class="order-total__label">{{:: 'checkout.summary.shippingMethod' | translate }}</span>
+                    <span class="order-total__value">{{:: summary.viewData.checkoutSession.shippingMethod.title}}</span>
+                </div>
+                <div class="order-total">
+                    <span class="order-total__label">{{:: 'checkout.summary.totalProducts' | translate }}</span>
+                    <span class="order-total__value" ng-bind-html="summary.viewData.totals.cartContentsTotal | currencyFormatter : summary.currency"></span>
+                </div>
+                <div class="order-total">
+                    <span class="order-total__label">{{:: 'checkout.summary.totalShipping' | translate }}</span>
+                    <span class="order-total__value" ng-bind-html="summary.viewData.totals.shipping | currencyFormatter : summary.currency"></span>
+                </div>
+                <div class="order-total">
+                    <span class="order-total__label">{{:: 'checkout.summary.taxes' | translate }}</span>
+                    <span class="order-total__value" ng-bind-html="summary.viewData.totals.taxes | currencyFormatter : summary.currency"></span>
+                </div>
+                <div class="order-total" ng-show="::summary.viewData.totals.fees>0">
+                    <span class="order-total__label">{{:: 'checkout.summary.fees' | translate }}</span>
+                    <span class="order-total__value" ng-bind-html="::summary.viewData.totals.fees | currencyFormatter : summary.currency"></span>
+                </div>
+            </div>
+            <div class="order-total order-total--big">
+                <span class="order-total__label order-total__label--big">{{:: 'checkout.summary.total' | translate }}</span>
+                <span class="big-price order-total__value order-total__value--big" ng-bind-html="summary.viewData.totals.total | currencyFormatter : summary.currency"></span>
+            </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar class="bar bar-footer bar-checkout" ng-if="summary.viewData.hasCart">
+        <button class="button button-clear icon-right ion-ios-arrow-forward pull-right" ng-click="summary.createOrder()" button-spinner="{{summary.viewData.checkingOut}}">
+            {{::'checkout.summary.completeCheckout' | translate}} &nbsp;</button>
+    </ion-footer-bar>
+</ion-view>

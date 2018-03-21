@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: IcoMoon.io -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="23"
+   height="32"
+   viewBox="0 0 23 32"
+   version="1.1"
+   id="svg4091"
+   sodipodi:docname="icon-house.svg"
+   style="fill:#000000"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06">
+  <metadata
+     id="metadata4097">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4095" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1018"
+     inkscape:window-height="629"
+     id="namedview4093"
+     showgrid="false"
+     inkscape:zoom="7.375"
+     inkscape:cx="16.125"
+     inkscape:cy="16"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg4091" />
+  <g
+     id="g4089"
+     transform="matrix(0.71877625,0,0,0.71877625,-0.00113877,3.99916)">
+    <path
+       d="M 1.624,17.782 4,15.882 V 30 c 0,1.104 0.896,2 2,2 h 6 c 1.104,0 2,-0.896 2,-2 v -8 h 4 v 8 c 0,1.104 0.896,2 2,2 h 6 c 1.104,0 2,-0.896 2,-2 V 15.882 l 2.376,1.9 C 30.56,17.928 30.78,18 31,18 c 0.294,0 0.584,-0.128 0.782,-0.376 0.344,-0.432 0.274,-1.06 -0.156,-1.406 l -15,-12 c -0.366,-0.292 -0.884,-0.292 -1.25,0 L 10,8.518 V 6 C 10,4.896 9.104,4 8,4 6.896,4 6,4.896 6,6 v 5.718 l -5.624,4.5 c -0.43,0.346 -0.5,0.974 -0.156,1.406 0.344,0.432 0.972,0.502 1.404,0.158 z M 16,6.28 l 10,8 V 30 H 20 V 20 H 12 V 30 H 6 V 14.282 Z"
+       id="path4087"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

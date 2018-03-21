@@ -1,0 +1,77 @@
+<ion-view view-title="{{'orderDetails.title' | translate}} {{::orderDetails.viewData.order.id}}">
+    <ion-nav-buttons side="left">
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+    </ion-nav-buttons>
+    <ion-content loader-pane="orderDetails.viewData.orderLoader" loader-pane-error-message="::orderDetails.viewData.errorMessage" overflow-scroll="true" lazy-scroll="">
+        <div class="order-details padding" ng-if="orderDetails.viewData.order">
+            <div class="order-attributes">
+                <div>
+                    <span class="order-attributes__label">Order ID: </span>
+                    <span class="order-attributes__value">{{::orderDetails.viewData.order.id}}</span>
+                </div>
+                <div>
+                    <span class="order-attributes__label">Ordered at: </span>
+                    <span class="order-attributes__value">{{::orderDetails.viewData.order.createdAt | date: 'yyyy-MM-dd HH:mm'}}</span>
+                </div>
+                <div>
+                    <span class="order-attributes__label">Last updated at: </span>
+                    <span class="order-attributes__value">{{::orderDetails.viewData.order.updatedAt | date: 'yyyy-MM-dd HH:mm'}}</span>
+                </div>
+                <div>
+                    <span class="order-attributes__label">Status: </span>
+                    <span class="order-attributes__value">{{::orderDetails.viewData.order.status}}</span>
+                </div>
+                <div>
+                    <span class="order-attributes__label">Shipping method: </span>
+                    <span class="order-attributes__value">{{::orderDetails.viewData.order.shippingMethodName}}</span>
+                </div>
+                <div>
+                    <span class="order-attributes__label">Payment method: </span>
+                    <span class="order-attributes__value">{{::orderDetails.viewData.order.paymentMethodName}}</span>
+                </div>
+                <div ng-show="::orderDetails.viewData.order.note">
+                    <span class="order-attributes__label">Note: </span>
+                    <span class="order-attributes__value order-attributes__value--italic">{{::orderDetails.viewData.order.note}}</span>
+                </div>
+            </div>
+            <div class="order-product flex-horizontal" ng-repeat="item in orderDetails.viewData.order.items track by item.id">
+                <div class="order-product__image animated" image-lazy-background-image="true" image-lazy-loaded-class="fadeIn" image-lazy-src="{{::item.image}}"></div>
+                <div class="flex-vertical-spread order-product__details">
+                    <div class="order-product__title three-line-label">{{::item.title}}</div>
+                    <div ng-show="::item.variantDescription" class="order-product__variations two-line-label">{{::item.variantDescription}}</div>
+                </div>
+                <div class="big-price order-product__price">
+                    <div class="order-product__price--base" ng-bind-html="::item.finalPrice * item.quantity | currencyFormatter : orderDetails.viewData.currency"></div>
+                    <div class="order-product__quantity">x{{::item.quantity}}</div>
+                </div>
+            </div>
+            <div class="order-totals">
+                <div class="order-total">
+                    <span class="order-total__label">{{:: 'orderDetails.totalProducts' | translate }}</span>
+                    <span class="order-total__value" ng-bind-html="orderDetails.viewData.order.totals.cartContentsTotal | currencyFormatter : orderDetails.viewData.currency"></span>
+                </div>
+                <div class="order-total">
+                    <span class="order-total__label">{{:: 'orderDetails.totalShipping' | translate }}</span>
+                    <span class="order-total__value" ng-bind-html="orderDetails.viewData.order.totals.shipping | currencyFormatter : orderDetails.viewData.currency"></span>
+                </div>
+                <div class="order-total">
+                    <span class="order-total__label">{{:: 'orderDetails.taxes' | translate }}</span>
+                    <span class="order-total__value" ng-bind-html="orderDetails.viewData.order.totals.taxes | currencyFormatter : orderDetails.viewData.currency"></span>
+                </div>
+                <div class="order-total" ng-show="::orderDetails.viewData.order.totals.fees>0">
+                    <span class="order-total__label">{{:: 'orderDetails.fees' | translate }}</span>
+                    <span class="order-total__value" ng-bind-html="orderDetails.viewData.order.totals.fees | currencyFormatter : orderDetails.viewData.currency"></span>
+                </div>
+                <div class="order-total" ng-show="::orderDetails.viewData.order.totals.discount>0">
+                    <span class="order-total__label">{{:: 'orderDetails.discount' | translate }}</span>
+                    <span class="order-total__value order-total__value--discount" ng-bind-html="::orderDetails.viewData.order.totals.discount | currencyFormatter : orderDetails.viewData.currency"></span>
+                </div>
+            </div>
+            <div class="order-total order-total--big">
+                <span class="order-total__label order-total__label--big">{{:: 'orderDetails.total' | translate }}</span>
+                <span class="big-price order-total__value order-total__value--big" ng-bind-html="orderDetails.viewData.order.totals.total | currencyFormatter : orderDetails.viewData.currency"></span>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
